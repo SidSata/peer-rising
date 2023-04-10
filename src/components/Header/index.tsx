@@ -34,10 +34,9 @@ const Header = ({ t }: any) => {
 
   const history = useHistory();
 
-  const handleClick = () => {
+  const handleTeacherClick = () => {
     history.push("/teachers");
   }
-
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
@@ -52,7 +51,7 @@ const Header = ({ t }: any) => {
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
           <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={handleClick}>
+        <CustomNavLinkSmall onClick={handleTeacherClick}>
           <Span>{t("Teachers")}</Span>
         </CustomNavLinkSmall>
         {/* <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
