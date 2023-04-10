@@ -109,4 +109,13 @@ export const Styles = createGlobalStyle`
     .ant-drawer-content-wrapper {
         width: 300px !important;
     }
+
+    .left-column {
+        width: 50%;
+    }
+      
+    .right-column {
+        width: 50%;
+    }
+
 `;
