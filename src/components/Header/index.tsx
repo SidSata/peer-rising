@@ -16,6 +16,11 @@ import {
   Span,
 } from "./styles";
 
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
+
+
+
+
 const Header = ({ t }: any) => {
   const [visible, setVisibility] = useState(false);
 
@@ -26,6 +31,13 @@ const Header = ({ t }: any) => {
   const onClose = () => {
     setVisibility(!visible);
   };
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/teachers");
+  }
+
 
   const MenuItem = () => {
     const scrollTo = (id: string) => {
@@ -40,12 +52,15 @@ const Header = ({ t }: any) => {
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
           <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
+        <CustomNavLinkSmall onClick={handleClick}>
+          <Span>{t("Teachers")}</Span>
+        </CustomNavLinkSmall>
+        {/* <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
           <Span>{t("Mission")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
           <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
+        </CustomNavLinkSmall> */}
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}

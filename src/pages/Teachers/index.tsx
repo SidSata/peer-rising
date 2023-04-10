@@ -1,11 +1,6 @@
 import { lazy } from "react";
-import IntroContent from "../../content/IntroContent.json";
-import MiddleBlockContent from "../../content/MiddleBlockContent.json";
-import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
-import ProductContent from "../../content/ProductContent.json";
-import ContactContent from "../../content/ContactContent.json";
 import TeacherContent from "../../content/TeacherContent.json";
+import CurriculumCreatorContent from "../../content/CurriculumCreatorContent.json";
 import { Styles } from "../../styles/styles";
 
 
@@ -47,8 +42,8 @@ const Home = () => {
       </div>
       <div className="right-column">
         <Block
-          title={TeacherContent.title}
-          content={TeacherContent.text}
+          title={CurriculumCreatorContent.title}
+          content={CurriculumCreatorContent.text}
         />
       </div>
     </SplitContainer>
