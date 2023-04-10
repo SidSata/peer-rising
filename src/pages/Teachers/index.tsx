@@ -1,15 +1,10 @@
 import { lazy } from "react";
 import TeacherContent from "../../content/TeacherContent.json";
 import CurriculumCreatorContent from "../../content/CurriculumCreatorContent.json";
-import { Styles } from "../../styles/styles";
 
 
-const Contact = lazy(() => import("../../components/ContactForm"));
-const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
-const Container = lazy(() => import("../../common/Container"));
 const SplitContainer = lazy(() => import("../../common/SplitContainer"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
-const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const Block = lazy(() => import("../../components/Block"));
 
 // const Home = () => {

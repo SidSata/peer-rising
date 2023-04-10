@@ -16,7 +16,7 @@ import {
   Span,
 } from "./styles";
 
-import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 
