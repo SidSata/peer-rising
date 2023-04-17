@@ -38,6 +38,10 @@ const Header = ({ t }: any) => {
     history.push("/teachers");
   }
 
+  const handleAboutClick = () => {
+    history.push("/");
+  }
+
   const MenuItem = () => {
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
@@ -48,18 +52,12 @@ const Header = ({ t }: any) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
+        <CustomNavLinkSmall onClick={handleAboutClick}>
           <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={handleTeacherClick}>
-          <Span>{t("Teachers")}</Span>
+          <Span>{t("For Teachers")}</Span>
         </CustomNavLinkSmall>
-        {/* <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall> */}
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}

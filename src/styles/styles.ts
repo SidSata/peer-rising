@@ -116,6 +116,7 @@ export const Styles = createGlobalStyle`
       
     .right-column {
         width: 50%;
+        padding: 0 1rem;    
     }
 
 `;
