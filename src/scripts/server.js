@@ -4,10 +4,11 @@ const app = express();
 const port = 3002;
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const fs = require('fs');
 require('dotenv').config(); 
 
 app.use(cors());
-
+app.use(express.json());
 
 const corsOptions = {
   origin: 'http://localhost:3001',
@@ -39,13 +40,22 @@ app.post('/submit', cors(corsOptions), (req, res) => {
   const { subject, gradeLevel, email } = req.body;
   console.log('Received:', subject, gradeLevel, email);
 
+  // Read the curriculum file based on the selected subject and grade level
+  const filePath = `/Users/siddhant/Desktop/Berkeley Classes/Spring 2023/peer-rising/peer-rising/peer-rising/sample_curricula/${subject}_${gradeLevel}.txt`;
+  const curriculum = fs.readFileSync(filePath, "utf-8");
 
   // create email message
-  let message = {
-    from: process.env.EMAIL_ADDRESS,
+  const message = {
+    from: process.env.EMAIL,
     to: email,
-    subject: 'Your curriculum request',
-    text: `Thank you for your interest in our ${subject} curriculum for ${gradeLevel} students!`,
+    subject: "Your curriculum",
+    text: `Here is your curriculum for ${subject} in ${gradeLevel}:\n\n${curriculum}`,
+    attachments: [
+      {
+        filename: `${subject}_${gradeLevel}.txt`,
+        content: curriculum,
+      },
+    ],
   };
 
   // send email
