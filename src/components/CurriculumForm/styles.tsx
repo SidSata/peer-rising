@@ -1,12 +1,106 @@
 import styled from "styled-components";
-import React from 'react';
-import { Select, Space } from 'antd';
+import { Select, Space, Input } from 'antd';
+import React, { useState } from 'react';
+
+
+const { Option } = Select;
+
+
+function SubjectSelector() {
+  const [subject, setSubject] = useState<string | undefined>(undefined);
+  const [error, setError] = useState<string>('');
+
+  function handleChange(value: string) {
+    setSubject(value);
+    setError('');
+  }
+
+  return (
+    <div>
+      <Select
+        placeholder="Subject"
+        value={subject}
+        onChange={handleChange}
+        onBlur={() => {
+          if (!subject) {
+            setError('Please select a subject');
+          }
+        }}
+        style={{ width: '100%' }}
+      >
+        <Option value="Math">Math</Option>
+        <Option value="Computer Science">Computer Science</Option>
+      </Select>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+    </div>
+  );
+}
+
+function GradeLevelSelector() {
+  const [gradeLevel, setGradeLevel] = useState<string | undefined>(undefined);
+  const [error, setError] = useState<string>('');
+
+  function handleChange(value: string) {
+    setGradeLevel(value);
+    setError('');
+  }
+
+  return (
+    <div>
+      <Select
+        placeholder="Grade level"
+        value={gradeLevel}
+        onChange={handleChange}
+        onBlur={() => {
+          if (!gradeLevel) {
+            setError('Please select a grade level');
+          }
+        }}
+        style={{ width: '100%' }}
+      >
+        <Option value="Middle-School">Middle-School</Option>
+        <Option value="High-School">High-School</Option>
+      </Select>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+    </div>
+  );
+}
+
+function EmailInput() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const value = event.target.value;
+    setEmail(value);
+    setError(value ? '' : 'Email is required');
+  }
+
+  return (
+    <div>
+      <Input
+        type="email"
+        placeholder="Enter your email"
+        value={email}
+        onChange={handleChange}
+        onBlur={() => setError(email ? '' : 'Email is required')}
+        style={{ marginBottom: '10px' }}
+      />
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+    </div>
+  );
+}
+
+export { SubjectSelector, GradeLevelSelector, EmailInput };
+
+
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
 };
 
 export const SubjectDropdownMenu: React.FC = () => (
+
   <Space wrap>
     <Select
       defaultValue="subject"
@@ -46,7 +140,6 @@ export const Container = styled("div")`
   padding: 2rem;
   border-radius: 3rem;
   margin: 0 auto;
-  top: 10%
 `;
 
 export const TextWrapper = styled("div")`
