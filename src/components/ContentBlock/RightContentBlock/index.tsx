@@ -21,11 +21,11 @@ const RightBlock = ({
   t,
   id,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
+  // const scrollTo = (id: string) => {
+  //   const element = document.getElementById(id) as HTMLDivElement;
+  //   element.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
   };
   const history = useHistory();
 
@@ -57,7 +57,6 @@ const RightBlock = ({
                       </Button>
                     );
                   })}
-                  
               </ButtonWrapper>
             </ContentWrapper>
             
