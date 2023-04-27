@@ -11,6 +11,8 @@ import {
   ButtonWrapper,
 } from "./styles";
 
+import { useHistory } from "react-router-dom";
+
 const RightBlock = ({
   title,
   content,
@@ -25,6 +27,14 @@ const RightBlock = ({
       behavior: "smooth",
     });
   };
+  const history = useHistory();
+
+  const handleTeacherClick = () => {
+    history.push("/teachers");
+  }
+
+
+
   return (
     <RightBlockContainer>
       <Fade direction="right">
@@ -41,14 +51,16 @@ const RightBlock = ({
                         key={id}
                         color={item.color}
                         fixedWidth={true}
-                        onClick={() => scrollTo("about")}
+                        onClick={handleTeacherClick}
                       >
                         {t(item.title)}
                       </Button>
                     );
                   })}
+                  
               </ButtonWrapper>
             </ContentWrapper>
+            
           </Col>
           <Col lg={11} md={11} sm={12} xs={24}>
             <SvgIcon src={icon} width="100%" height="100%" />

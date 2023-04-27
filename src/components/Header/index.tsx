@@ -41,15 +41,22 @@ const Header = ({ t }: any) => {
   const handleAboutClick = () => {
     history.push("/");
   }
+  
+  const handleContactClick = () => {
+    history.push("/");
+    scrollTo("contact");
+  }
 
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+    setVisibility(false);
+  };
+  
   const MenuItem = () => {
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-      setVisibility(false);
-    };
+    
     return (
       <>
         <CustomNavLinkSmall onClick={handleAboutClick}>
@@ -60,7 +67,7 @@ const Header = ({ t }: any) => {
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
+          onClick={handleContactClick}
         >
           <Span>
             <Button>{t("Contact")}</Button>
