@@ -26,7 +26,7 @@ const RightBlock = ({
   //   element.scrollIntoView({
   //     behavior: "smooth",
   //   });
-  };
+  // };
   const history = useHistory();
 
   const handleTeacherClick = () => {
