@@ -1,13 +1,13 @@
 import { lazy } from "react";
 import CurriculumCreatorContent from "../../content/CurriculumCreatorContent.json";
 import { Divider } from 'antd';
-import IntroContent from "../../content/IntroContent.json";
+// import IntroContent from "../../content/IntroContent.json";
 
 
 
 const SplitContainer = lazy(() => import("../../common/SplitContainer"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
-const Block = lazy(() => import("../../components/Block"));
+// const Block = lazy(() => import("../../components/Block"));
 const UserField = lazy(() => import("../../components/UserField"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const Container = lazy(() => import("../../common/Container"));
