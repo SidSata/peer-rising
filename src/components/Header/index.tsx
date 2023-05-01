@@ -43,21 +43,20 @@ const Header = ({ t }: any) => {
   }
   
   const handleContactClick = () => {
-    history.push("/");
-    scrollTo("contact");
+    history.push("/contact");
   }
 
   const handlePlansClick = () => {
     history.push("/plans");
   }
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-    setVisibility(false);
-  };
+  // const scrollTo = (id: string) => {
+  //   const element = document.getElementById(id) as HTMLDivElement;
+  //   element.scrollIntoView({
+  //     behavior: "smooth",
+  //   });
+  //   setVisibility(false);
+  // };
   
   const MenuItem = () => {
     

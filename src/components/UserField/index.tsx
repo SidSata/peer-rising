@@ -135,7 +135,7 @@ const UserField: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" onClick={handleSubmit} disabled={!subject || !gradeLevel || !validateEmail(email!)}>
+        <Button type="primary" htmlType="submit"  disabled={!subject || !gradeLevel || !validateEmail(email!)}>
           Submit
         </Button>
       </Form.Item>

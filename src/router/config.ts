@@ -13,6 +13,11 @@ const routes = [
     path: ["/plans"],
     exact: true,
     component: "Plans",
+  },
+  {
+    path: ["/contact"],
+    exact: true,
+    component: "ContactPage",
   }
 ];
 

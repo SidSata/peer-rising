@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const fs = require('fs');
 const mongoose = require('mongoose')
-const Request = require('./models/Request');
+const Request = require('./models/request');
 
 require('dotenv').config(); 
 
@@ -15,9 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://peerrising.com/', 'http://localhost:3001'],
+  origin: ['https://peerrising.com/teachers','https://peerrising.com/', 'http://localhost:3001'],
   methods: 'POST',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER_NAME}.mongodb.net/<dbname>?retryWrites=true&w=majority`, {

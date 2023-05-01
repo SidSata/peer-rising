@@ -18,16 +18,19 @@ const Container = lazy(() => import("../../common/Container"));
 const Home = () => {
 
   return (
+    
     <Container>
       <ScrollToTop />
       <ContentBlock
         type="right"
         title={CurriculumCreatorContent.title}
         content={CurriculumCreatorContent.text}
-        // button={IntroContent.button}
+        button={CurriculumCreatorContent.button}
         icon="img/lesson_help.png"
         id="intro"
       />
+
+      <h3 > Browse our sample curricula! </h3>
     <SplitContainer>
       
       
