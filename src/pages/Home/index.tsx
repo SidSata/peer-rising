@@ -28,8 +28,8 @@ const Home = () => {
         id="intro"
       /> */}
       
-      <img src="img/teaching_tough.png" width="100%" height="100%"/>
-      <img src="img/our_services.png" width="100%" height="100%"/>
+      <img src="img/teaching_tough.png" alt="Teaching is tough" width="100%" height="100%"/>
+      <img src="img/our_services.png" alt="Services offerd" width="100%" height="100%"/>
       
       <Contact
         title={ContactContent.title}
