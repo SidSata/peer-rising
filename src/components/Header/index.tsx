@@ -47,6 +47,10 @@ const Header = ({ t }: any) => {
     scrollTo("contact");
   }
 
+  const handlePlansClick = () => {
+    history.push("/plans");
+  }
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -63,8 +67,14 @@ const Header = ({ t }: any) => {
           <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={handleTeacherClick}>
-          <Span>{t("For Teachers")}</Span>
+          <Span>{t("Teachers")}</Span>
         </CustomNavLinkSmall>
+        
+        <CustomNavLinkSmall onClick={handlePlansClick}>
+          <Span>{t("Browse Plans")}</Span>
+        </CustomNavLinkSmall>
+
+
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={handleContactClick}

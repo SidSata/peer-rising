@@ -39,9 +39,15 @@ const UserField: React.FC = () => {
   const [subject, setSubject] = useState<string | null>(null);
   const [gradeLevel, setGradeLevel] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
+  const [submissionStatus, setSubmissionStatus] = useState<string | null>(null);;
   const [form] = Form.useForm();
 
   const handleSubmit = (): void => {
+    
+    if (!subject || !gradeLevel || !email || !validateEmail(email)) {
+      setSubmissionStatus('error');
+      return;
+    }
     form.validateFields().then((values) => {
       const { subject, gradeLevel, email } = values;
       console.log('Submitting:', subject, gradeLevel, email);
@@ -56,8 +62,13 @@ const UserField: React.FC = () => {
       .then(response => {
         if (response.ok) {
           console.log('Data submitted successfully!');
+          setSubmissionStatus('success');
+          setSubject('');
+          setGradeLevel('');
+          setEmail('');
         } else {
           console.log('Error submitting data');
+          setSubmissionStatus('error');
         }
       })
       .catch(error => {
@@ -67,6 +78,14 @@ const UserField: React.FC = () => {
   };
 
   return (
+    <div>
+      {submissionStatus === 'success' && (
+      <div>Your submission was successful!</div>
+      )}
+      {submissionStatus === 'error' && (
+      <div>There was an error with your submission.</div>
+      )}
+      
     <Form form={form} onFinish={handleSubmit}>
       <Form.Item
         label="Subject"
@@ -108,11 +127,12 @@ const UserField: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" disabled={!subject || !gradeLevel || !validateEmail(email!)}>
+        <Button type="primary" htmlType="submit" onClick={handleSubmit} disabled={!subject || !gradeLevel || !validateEmail(email!)}>
           Submit
         </Button>
       </Form.Item>
     </Form>
+    </div>
   );
 };
 

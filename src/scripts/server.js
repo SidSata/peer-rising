@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 const corsOptions = {
-  origin: 'https://peerrising.com/',
+  origin: ['https://peerrising.com/', 'http://localhost:3001'],
   methods: 'POST',
   optionsSuccessStatus: 200
 };
