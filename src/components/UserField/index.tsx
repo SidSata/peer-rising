@@ -39,15 +39,11 @@ const UserField: React.FC = () => {
   const [subject, setSubject] = useState<string | null>(null);
   const [gradeLevel, setGradeLevel] = useState<string | null>(null);
   const [email, setEmail] = useState<string | null>(null);
-  const [submissionStatus, setSubmissionStatus] = useState<string | null>(null);;
+  const [submitted, setSubmitted] = useState(false);
   const [form] = Form.useForm();
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async () => {
     
-    if (!subject || !gradeLevel || !email || !validateEmail(email)) {
-      setSubmissionStatus('error');
-      return;
-    }
     form.validateFields().then((values) => {
       const { subject, gradeLevel, email } = values;
       console.log('Submitting:', subject, gradeLevel, email);
@@ -62,30 +58,42 @@ const UserField: React.FC = () => {
       .then(response => {
         if (response.ok) {
           console.log('Data submitted successfully!');
-          setSubmissionStatus('success');
+          setSubmitted(true);
           setSubject('');
           setGradeLevel('');
           setEmail('');
         } else {
           console.log('Error submitting data');
-          setSubmissionStatus('error');
+          
         }
       })
       .catch(error => {
         console.error('Error submitting data:', error);
       });
       });
+
+      
+  };
+
+  const handleReset = (): void => {
+    form.resetFields();
+    setSubject(null);
+    setGradeLevel(null);
+    setEmail(null);
+    setSubmitted(false);
   };
 
   return (
-    <div>
-      {submissionStatus === 'success' && (
-      <div>Your submission was successful!</div>
-      )}
-      {submissionStatus === 'error' && (
-      <div>There was an error with your submission.</div>
-      )}
-      
+    <>
+     {submitted ? 
+     
+     (
+      <>
+        <p>Thank you for your submission!</p>
+        <Button onClick={handleReset}>Submit another form</Button>
+      </>
+    )
+     : (
     <Form form={form} onFinish={handleSubmit}>
       <Form.Item
         label="Subject"
@@ -131,8 +139,9 @@ const UserField: React.FC = () => {
           Submit
         </Button>
       </Form.Item>
-    </Form>
-    </div>
+    </Form> 
+    )}
+    </>
   );
 };
 

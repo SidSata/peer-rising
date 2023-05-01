@@ -9,7 +9,7 @@ export const SplitContainer = styled("div")<any>`
   justify-content: space-between;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 60px;
+  padding: 60px 60px;
   border-top: ${(p) => (p.border ? "1px solid #CDD1D4" : "")};
 
   @media only screen and (max-width: 1024px) {
