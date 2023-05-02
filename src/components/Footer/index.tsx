@@ -21,10 +21,10 @@ import { withTranslation } from "react-i18next";
 //   LanguageSwitchContainer,
 // } from "./styles";
 
-interface SocialLinkProps {
-  href: string;
-  src: string;
-}
+// interface SocialLinkProps {
+//   href: string;
+//   src: string;
+// }
 
 const Footer = ({ t }: any) => {
   // const handleChange = (language: string) => {
