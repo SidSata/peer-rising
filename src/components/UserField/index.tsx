@@ -48,7 +48,7 @@ const UserField: React.FC = () => {
       const { subject, gradeLevel, email } = values;
       console.log('Submitting:', subject, gradeLevel, email);
       // Call backend API with subject, gradeLevel, and email
-      fetch('http://localhost:3002/submit', {
+      fetch('https://8e4e-142-254-1-167.ngrok-free.app/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
