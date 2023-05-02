@@ -4,6 +4,8 @@ import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
 
+import { useHistory } from "react-router-dom";
+
 interface MiddleBlockProps {
   title: string;
   content: string;
@@ -12,12 +14,17 @@ interface MiddleBlockProps {
 }
 
 const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
+  
+  const history = useHistory();
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
       behavior: "smooth",
     });
   };
+  const handlePlansClick = () => {
+    history.push("/plans");
+  }
   return (
     <MiddleBlockSection>
       <Slide direction="up">
@@ -27,7 +34,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>
               {button && (
-                <Button name="submit" onClick={() => scrollTo("mission")}>
+                <Button name="submit" onClick={handlePlansClick}>
                   {t(button)}
                 </Button>
               )}

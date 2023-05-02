@@ -10,8 +10,8 @@ const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const UserField = lazy(() => import("../../components/UserField"));
 const TeacherContentBlock = lazy(() => import("../../components/TeacherContentBlock"));
 const Container = lazy(() => import("../../common/Container"));
-
-
+const ImageGrid = lazy(() => import("../../components/ImageGrid"));
+const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 
 
 const Home = () => {
@@ -28,13 +28,26 @@ const Home = () => {
         icon="img/lesson_help.png"
         id="intro"
       />
-
-      <h3 > Browse our sample curricula! </h3>
+      <div id="custom">
+      <MiddleBlock
+        title="View our customized curricula!"
+        content=""
+        button="Pricing Plans"
+      /></div>
+      <ImageGrid />
+      <div id="browse">
+      <MiddleBlock
+        title="Browse our sample curricula!"
+        content=""
+        button=""
+        
+      /></div>
+      
     <SplitContainer>
       
       
 
-      <div className="left-column"  id="browse">
+      <div className="left-column">
       {/* <Block
           title={CurriculumCreatorContent.title}
           content={CurriculumCreatorContent.text}

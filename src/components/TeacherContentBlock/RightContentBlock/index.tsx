@@ -29,9 +29,7 @@ const RightBlock = ({
   // };
   const history = useHistory();
 
-  const handlePlansClick = () => {
-    history.push("/plans");
-  }
+  
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
@@ -56,7 +54,7 @@ const RightBlock = ({
                         key={id}
                         color={item.color}
                         fixedWidth={true}
-                        onClick={() => item.onClick === 0 ? scrollTo('browse') : handlePlansClick()}
+                        onClick={() => item.onClick === 0 ? scrollTo('custom') : scrollTo('browse')}
                       >
                         {t(item.title)}
                       </Button>

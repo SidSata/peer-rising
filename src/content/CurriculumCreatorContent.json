@@ -3,11 +3,11 @@
     "text": "With our easy-to-use curriculum builder, you can create a custom curriculum in seconds. Just select the topics you want to cover, and we'll do the rest.",
     "button": [
       {
-        "title": "Browse sample curriculum",
+        "title": "Create custom curriculum",
         "onClick": 0
       },
       {
-        "title": "Pricing plans",
+        "title": "View Samples",
         "onClick": 1,
         "color": "#fff"
       }
