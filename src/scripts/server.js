@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://peerrising.com/teachers','https://peerrising.com/', 'http://localhost:3001'],
+  origin: ['https://peerrising.com/teachers', 'https://8e4e-142-254-1-167.ngrok-free.app' ,'https://peerrising.com/', 'http://localhost:3001'],
   methods: 'POST',
   optionsSuccessStatus: 200,
 };

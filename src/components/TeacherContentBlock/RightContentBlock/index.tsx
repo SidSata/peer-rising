@@ -11,7 +11,6 @@ import {
   ButtonWrapper,
 } from "./styles";
 
-import { useHistory } from "react-router-dom";
 
 const RightBlock = ({
   title,
@@ -27,7 +26,6 @@ const RightBlock = ({
   //     behavior: "smooth",
   //   });
   // };
-  const history = useHistory();
 
   
 

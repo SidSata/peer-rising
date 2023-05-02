@@ -16,12 +16,7 @@ interface MiddleBlockProps {
 const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
   
   const history = useHistory();
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+  
   const handlePlansClick = () => {
     history.push("/plans");
   }
