@@ -1,0 +1,55 @@
+Course 1: Introduction to Programming
+
+Course description: In this course, students will learn the fundamentals of computer programming, including basic programming concepts, syntax, data types, and control structures. Students will use a programming language such as Python to complete hands-on projects and assignments.
+Topics covered:
+Introduction to programming concepts and terms
+Data types and variables
+Operators and expressions
+Control structures (if/else, loops, functions)
+Input/output and user interaction
+Debugging and testing
+Prerequisites: None
+
+Course 2: Web Development
+
+Course description: In this course, students will learn the basics of web development, including HTML, CSS, and JavaScript. Students will use popular web development tools such as Bootstrap and jQuery to create interactive and dynamic websites.
+Topics covered:
+Introduction to HTML and CSS
+Web page layout and design
+Introduction to JavaScript
+Working with the Document Object Model (DOM)
+Events and event handling
+Introduction to web development frameworks (Bootstrap, jQuery)
+Prerequisites: Course 1 or equivalent programming experience
+
+Course 3: Data Structures and Algorithms
+
+Course description: In this course, students will learn about data structures and algorithms used in computer programming. Students will use a programming language such as Java to implement and analyze algorithms and data structures.
+Topics covered:
+Introduction to data structures (arrays, linked lists, trees, stacks, queues, hash tables)
+Basic algorithms (sorting, searching)
+Analysis of algorithms (big O notation)
+Recursion
+Prerequisites: Course 1 or equivalent programming experience
+
+Course 4: Mobile App Development
+
+Course description: In this course, students will learn about mobile app development for Android and iOS devices. Students will use a mobile app development platform such as React Native or Flutter to create cross-platform mobile apps.
+Topics covered:
+Introduction to mobile app development
+User interface design for mobile apps
+React Native or Flutter basics
+Building native apps with JavaScript
+Integrating with device features (camera, location, etc.)
+Prerequisites: Course 2 and Course 3 or equivalent programming experience
+
+Course 5: Artificial Intelligence
+
+Course description: In this course, students will learn about artificial intelligence and machine learning concepts and techniques. Students will use a programming language such as Python and machine learning libraries such as TensorFlow to build AI applications.
+Topics covered:
+Introduction to artificial intelligence and machine learning
+Data preprocessing and cleaning
+Machine learning models (linear regression, logistic regression, decision trees, neural networks)
+Training and evaluating models
+Computer vision and natural language processing
+Prerequisites: Course 3 or equivalent programming experience
