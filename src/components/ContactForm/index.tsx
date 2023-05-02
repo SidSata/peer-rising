@@ -1,12 +1,10 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { ContactProps, ValidationTypeProps } from "./types";
-import { useForm } from "../../common/utils/useForm";
-import validate from "../../common/utils/validationRules";
+import { ContactProps } from "./types";
 import Block from "../Block";
 
-import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
+import { ContactContainer } from "./styles";
 
 
 import { useState } from 'react';
@@ -32,10 +30,7 @@ interface FormData {
 
 
 const Contact = ({ title, content, id, t }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(
-    validate
-  ) as any;
-
+  
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -92,7 +87,10 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
     });
   };
   
-
+  const handleReset = (): void => {
+    form.resetFields();
+    setSuccess(false);
+  };
   // const ValidationType = ({ type }: ValidationTypeProps) => {
   //   const ErrorMessage = errors[type];
   //   return (
@@ -103,7 +101,15 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
   // };
 
   return (
-    <ContactContainer id={id}>
+    <>
+    {success ?  
+      (
+        <>
+          <p>Thank you for reaching out! Please allow us some time to get back to you.</p>
+          <Button onClick={handleReset}>Submit another form</Button>
+        </>
+      )
+    : (<ContactContainer id={id}>
       <Row justify="space-between" align="middle">
         <Col lg={12} md={11} sm={24} xs={24}>
           <Slide direction="left">
@@ -154,7 +160,8 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
       </Form>
         </Col>
       </Row>
-    </ContactContainer>
+    </ContactContainer>)}
+    </>
   );
 };
 
