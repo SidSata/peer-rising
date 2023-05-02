@@ -1,8 +1,13 @@
+import { lazy } from "react";
 import { Row, Col } from 'antd';
+
+const TwoImageGrid = lazy(() => import("../../components/TwoImageGrid"));
 
 const PricingPlans = () => {
   return (
+    
     <div style={{ padding: '50px' }}>
+        <TwoImageGrid />
       <Row justify="space-around" gutter={[16, 32]}>
         <Col span={6}>
           <div style={{ textAlign: 'center', padding: '20px',  }}>
