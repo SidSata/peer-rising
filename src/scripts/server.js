@@ -80,7 +80,7 @@ app.post('/submit', cors(corsOptions), (req, res) => {
     text: `Here is your curriculum for ${subject} in ${gradeLevel}:\n\n${curriculum}`,
     attachments: [
       {
-        filename: `${subject}_${gradeLevel}.txt`,
+        filename: `${subject}_${gradeLevel}.pdf`,
         content: curriculum,
       },
     ],
