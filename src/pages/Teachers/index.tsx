@@ -7,9 +7,8 @@ import { Divider } from 'antd';
 
 const SplitContainer = lazy(() => import("../../common/SplitContainer"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
-// const Block = lazy(() => import("../../components/Block"));
 const UserField = lazy(() => import("../../components/UserField"));
-const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+const TeacherContentBlock = lazy(() => import("../../components/TeacherContentBlock"));
 const Container = lazy(() => import("../../common/Container"));
 
 
@@ -21,7 +20,7 @@ const Home = () => {
     
     <Container>
       <ScrollToTop />
-      <ContentBlock
+      <TeacherContentBlock
         type="right"
         title={CurriculumCreatorContent.title}
         content={CurriculumCreatorContent.text}
@@ -35,7 +34,7 @@ const Home = () => {
       
       
 
-      <div className="left-column">
+      <div className="left-column"  id="browse">
       {/* <Block
           title={CurriculumCreatorContent.title}
           content={CurriculumCreatorContent.text}
