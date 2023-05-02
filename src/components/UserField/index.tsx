@@ -89,7 +89,7 @@ const UserField: React.FC = () => {
      
      (
       <>
-        <p>Thank you for your submission!</p>
+        <p>Thank you for your submission! Please check your email for the sample curriculum.</p>
         <Button onClick={handleReset}>Submit another form</Button>
       </>
     )
